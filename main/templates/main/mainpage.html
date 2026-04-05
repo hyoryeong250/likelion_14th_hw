@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="page-container">
+        <img src="{% static 'images/RR.jpg' %}" alt="루피" width="100">
+        <p class="tag">LikeLion_14th_session_HW</p>
+        <h1 class="title"> 멋사 {{ generation }}기 2주차 세션 정리</h1>
+        <h6 class="welcome">Welcome Django!</h6>
+
+        <div class="section">
+            <div class="section-title"> 🚩페이지 만들기 (HTML / View / URL) </div>
+            <ul>
+                <li>HTML : {{ info.HTML }}</li>
+                <li>View : {{ info.View }}</li>
+                <li>URL: {{ info.URL }}</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <div class="section-title">🚩Django 템플릿 언어 </div>
+            <ul>
+                {% for shortcut in shortcuts %}
+                        <li><p>{{  shortcut  }}</p></li>
+                    {% endfor %}
+            </ul>
+        </div>
+
+        <div class="section">
+            <div class="section-title"> 🚩정적 파일(Static) 분리 </div>
+            <ul>
+                <li>설정: static/ 폴더에 CSS와 이미지를 저장하고, settings.py에서 경로(STATICFILES_DIRS)를 지정한다</li>
+                <li>사용: HTML상단에 {% verbatim %}{% load static %}{% endverbatim %}을 선언한 후 정적 파일 경로를 연결한다</li>
+            </ul>
+        </div>
+
+
+    </div>
+{% endblock %}
